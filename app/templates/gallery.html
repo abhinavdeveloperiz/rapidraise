@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Gallery | RapidRise Access{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section 
+    class="relative min-h-[28vh] md:h-[30vh] bg-scroll md:bg-fixed bg-center bg-cover text-white flex items-center justify-center"
+    style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');"
+>
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative text-center px-6">
+        <h1 class="text-4xl md:text-5xl font-bold mb-3 uppercase">
+            Gallery
+        </h1>
+
+        <p class="text-white/90 text-lg">
+            <a href="/" class="hover:text-rrOrange transition">Home</a>
+            <span class="mx-2">›</span>
+            Gallery
+        </p>
+    </div>
+</section>
+
+
+<!-- GALLERY GRID -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <!-- IMAGE ITEM -->
+        <div class="overflow-hidden rounded-xl shadow group">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789"
+                 class="w-full h-60 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="overflow-hidden rounded-xl shadow group">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd"
+                 class="w-full h-60 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+     
+
+        <div class="overflow-hidden rounded-xl shadow group">
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5"
+                 class="w-full h-60 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="overflow-hidden rounded-xl shadow group">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+                 class="w-full h-60 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+        <div class="overflow-hidden rounded-xl shadow group">
+            <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232"
+                 class="w-full h-60 object-cover group-hover:scale-110 transition duration-500">
+        </div>
+
+
+     
+
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-20 bg-rrBlue text-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2 class="text-3xl font-bold mb-6">
+            View Our Completed Projects
+        </h2>
+
+        <p class="text-white/80 mb-8">
+            RapidRise Access delivers safe, reliable, and professional scaffolding solutions across diverse projects.
+        </p>
+
+        <a href="/contact/"
+           class="bg-rrOrange px-10 py-4 rounded-lg font-semibold hover:bg-orange-600 transition">
+            Start Your Project
+        </a>
+
+    </div>
+</section>
+
+{% endblock %}

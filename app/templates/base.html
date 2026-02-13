@@ -1,0 +1,273 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}RapidRice Services{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- gfont -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rrBlue: "#0F2747",   // Navy from logo
+                        rrOrange: "#F26722", // Brand Orange
+                        rrLight: "#F9FAFB"
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'], // for H tags
+                        body: ['Inter', 'sans-serif'],      // for text & UI
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+    </style>
+
+
+    <style>
+        .nav-link {
+            @apply hover:text-yellow-400 transition duration-300;
+        }
+    </style>
+
+</head>
+
+
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="fixed bottom-6 right-6 flex flex-col items-end gap-3 z-50">
+
+    <!-- CALL BUTTON -->
+    <a href="tel:+97336774186"
+       class="flex items-center gap-3 bg-rrBlue text-white px-5 py-3 rounded-full shadow-lg hover:scale-105 transition animate-pulse">
+       
+        <i class="fa-solid fa-phone"></i>
+        <span class="hidden md:inline">Call Us</span>
+    </a>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/97336774186"
+       target="_blank"
+       class="flex items-center gap-3 bg-rrOrange text-white px-5 py-3 rounded-full shadow-lg hover:scale-105 transition">
+       
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span class="hidden md:inline">WhatsApp</span>
+    </a>
+
+</div>
+
+
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 py- flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="{% static 'image/logo.jpg' %}" alt="RapidRise Access" class="h-20 w-auto">
+            </a>
+
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about/" class="nav-link">About</a>
+                <a href="/services/" class="nav-link">Services</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/gallery/" class="nav-link">Gallery</a>
+                <a href="/contact/" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Mobile Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= MOBILE SIDEBAR ================= -->
+    <div id="mobile-menu"
+        class="fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+
+        <div class="flex justify-between items-center px-6 py-4 border-b">
+            <span class="text-xl font-bold text-rrOrange">Menu</span>
+            <button id="close-btn" class="text-xl">✕</button>
+        </div>
+
+        <nav class="flex flex-col p-6 space-y-6 font-medium">
+            <a href="/" class="hover:text-green-600">Home</a>
+            <a href="/about/" class="hover:text-green-600">About</a>
+            <a href="/services/" class="hover:text-green-600">Services</a>
+            <a href="/blog" class="hover:text-green-600">Blog</a>
+            <a href="/gallery/" class="hover:text-green-600">Gallery</a>
+            <a href="/contact/" class="hover:text-green-600">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40"></div>
+
+
+    <!-- ================= CONTENT ================= -->
+    <main class="pt-16">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+<!-- ================= ADVANCED FOOTER ================= -->
+<footer class="bg-gray-900 text-white pt-16 pb-10 ">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+
+        <!-- Company Info -->
+        <div>
+            <img src="{% static 'image/logo.jpg' %}" alt="RapidRise Access" class="h-12 mb-4">
+
+            <p class="text-white/70 text-sm leading-relaxed">
+                RapidRise Access delivers safe and reliable scaffolding,
+                access platforms, and structural support solutions for
+                construction and industrial projects.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+            <h4 class="font-semibold text-lg mb-4 text-rrOrange">Quick Links</h4>
+            <ul class="space-y-2 text-white/70">
+                <li><a href="/" class="hover:text-white">Home</a></li>
+                <li><a href="/about/" class="hover:text-white">About Us</a></li>
+                <li><a href="/services/" class="hover:text-white">Services</a></li>
+                <li><a href="/blog/" class="hover:text-white">Blog</a></li>
+                <li><a href="/contact/" class="hover:text-white">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+            <h4 class="font-semibold text-lg mb-4 text-rrOrange">Our Services</h4>
+            <ul class="space-y-2 text-white/70">
+                <li>Industrial Scaffolding</li>
+                <li>Access Platforms</li>
+                <li>Structural Support</li>
+                <li>Safety Inspection</li>
+                <li>Maintenance Support</li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+            <h4 class="font-semibold text-lg mb-4 text-rrOrange">Contact</h4>
+
+            <ul class="space-y-3 text-white/70 text-sm">
+
+                <li class="flex items-start gap-3">
+                    <i class="fa-solid fa-location-dot text-rrOrange mt-1"></i>
+                    Bahrain
+                </li>
+
+                <li class="flex items-center gap-3">
+                    <i class="fa-solid fa-phone text-rrOrange"></i>
+                    +973 36 774 186
+                </li>
+
+                <li class="flex items-center gap-3">
+                    <i class="fa-solid fa-envelope text-rrOrange"></i>
+                    info@rapidriserise.com
+                </li>
+
+            </ul>
+
+            <!-- Social Icons -->
+            <div class="flex gap-4 mt-6 text-xl">
+                <a href="#" class="hover:text-rrOrange"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-rrOrange"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-rrOrange"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-rrOrange"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/10 mt-10 pt-6 text-center text-sm text-white/60 space-y-2">
+
+        <p>© 2026 RapidRise Access. All rights reserved.</p>
+
+        <p>
+            Developed by
+            <a href="https://www.inspirezesttechnologies.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-rrOrange hover:underline">
+               Inspirezest Technologies Pvt Ltd
+            </a>
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+
+    <!-- ================= JS ================= -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        function closeMenu() {
+            mobileMenu.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
