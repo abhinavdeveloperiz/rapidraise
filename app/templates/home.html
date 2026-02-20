@@ -56,40 +56,40 @@
     </div>
 </section>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
-    const counters = document.querySelectorAll('.counter');
-    let started = false;
+        const counters = document.querySelectorAll('.counter');
+        let started = false;
 
-    const startCounter = (entry) => {
-        if (!started && entry.isIntersecting) {
-            counters.forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                let count = 0;
-                const speed = target / 80; // adjust speed
+        const startCounter = (entry) => {
+            if (!started && entry.isIntersecting) {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const speed = target / 80; // adjust speed
 
-                const updateCount = () => {
-                    if (count < target) {
-                        count += speed;
-                        counter.innerText = Math.ceil(count);
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        counter.innerText = target + (target === 100 ? "%" : "+");
-                    }
-                };
+                    const updateCount = () => {
+                        if (count < target) {
+                            count += speed;
+                            counter.innerText = Math.ceil(count);
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = target + (target === 100 ? "%" : "+");
+                        }
+                    };
 
-                updateCount();
-            });
-            started = true;
-        }
-    };
+                    updateCount();
+                });
+                started = true;
+            }
+        };
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(startCounter);
-    }, { threshold: 0.4 });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(startCounter);
+        }, { threshold: 0.4 });
 
-    counters.forEach(counter => observer.observe(counter));
-});
+        counters.forEach(counter => observer.observe(counter));
+    });
 </script>
 
 
@@ -111,7 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
         <div>
-            <img src="https://media.istockphoto.com/id/1035150690/photo/construction-site-with-three-engineers-and-crane-on-the-top-of-new-skyscraper.jpg?s=612x612&w=0&k=20&c=33f1uM0uQYzJuIHPXiQXdClUZJXFHodVZBVz1694BUE=" class="rounded-xl shadow-lg">
+            <img src="https://nturm.com/assetsweb/images/Cuplock-Scaffolding/7.jpg"
+                class="rounded-xl shadow-lg">
         </div>
 
     </div>
@@ -135,59 +136,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="grid md:grid-cols-3 gap-10">
 
-            <!-- Card 1 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition duration-300">
-                
-                <div class="overflow-hidden">
-                    <img src="https://f.hubspotusercontent40.net/hubfs/6441490/Axios_Blog_Images_ScaffoldingMaintenance3.jpg"
-                         class="w-full h-52 object-cover hover:scale-110 transition duration-500">
-                </div>
-
+            <div class="rounded-xl overflow-hidden shadow hover:shadow-xl transition">
+                <img src="https://www.arabianspar.com/blog/wp-content/uploads/2022/11/cuplock-project-2.jpg"
+                    class="w-full h-52 object-cover">
                 <div class="p-8">
+
                     <h3 class="text-xl font-semibold text-rrBlue mb-3">
-                        Industrial Scaffolding
+                        Cuplock Scaffolding
                     </h3>
                     <p class="text-gray-600">
-                        Safe and durable scaffolding systems built for industrial environments.
+                        Durable scaffolding systems designed for industrial environments and heavy-duty operations.
                     </p>
                 </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition duration-300">
-                
-                <div class="overflow-hidden">
-                    <img src="https://www.cwplant.co.uk/wp-content/uploads/2021/12/Genie-GS-4069DC-E-Drive_2-2.jpg"
-                         class="w-full h-52 object-cover hover:scale-110 transition duration-500">
-                </div>
-
-                <div class="p-8">
-                    <h3 class="text-xl font-semibold text-rrBlue mb-3">
-                        Access Platforms
-                    </h3>
-                    <p class="text-gray-600">
-                        Custom-built platforms designed for safe access to complex structures.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition duration-300">
-                
-                <div class="overflow-hidden">
-                    <img src="https://www.safeopedia.com/wp-content/uploads/2023/07/annual-safety-inspection.jpg"
-                         class="w-full h-52 object-cover hover:scale-110 transition duration-500">
-                </div>
-
-                <div class="p-8">
-                    <h3 class="text-xl font-semibold text-rrBlue mb-3">
-                        Safety Inspection
-                    </h3>
-                    <p class="text-gray-600">
-                        Professional inspections ensuring compliance and workplace safety.
-                    </p>
-                </div>
-            </div>
 
         </div>
 
